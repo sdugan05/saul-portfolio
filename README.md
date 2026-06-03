@@ -67,7 +67,7 @@ Use these settings when creating the Cloudflare Pages project:
 - Output directory: `dist`
 - Node version: `22.12.0` or newer
 
-This repository also includes `wrangler.toml` with `command = "npm run build"` and `pages_build_output_dir = "./dist"` so Cloudflare Pages builds Astro first and uploads the generated static site instead of the repository source files.
+For Git-connected Cloudflare Pages deployments, set both fields in the Cloudflare dashboard. A `wrangler.toml` file is intentionally not included because Pages does not support build commands in that file.
 
 The site is static and does not require a backend or server runtime.
 
