@@ -1,0 +1,56 @@
+---
+import LinkButton from "../components/LinkButton.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Layout from "../layouts/Layout.astro";
+import { skillGroups } from "../data/skills";
+---
+
+<Layout
+  title="Resume"
+  description="Resume placeholder page for Saul Dugan with skills, focus areas, and a link to the resume PDF."
+>
+  <section class="mx-auto max-w-4xl px-5 py-16 sm:py-20">
+    <SectionHeading
+      eyebrow="Resume"
+      title="Resume and professional profile"
+      description="This page is intentionally conservative. Add exact roles, dates, education, and accomplishments when they are ready."
+    />
+
+    <div class="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-semibold text-zinc-950">Saul Dugan</h2>
+      <p class="mt-3 text-base leading-7 text-zinc-600">
+        Quantitative trading systems, AI-assisted research tools, Palantir Foundry workflows, and low-level software.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <LinkButton href="/resume.pdf" label="Resume PDF" />
+        <LinkButton href="/#contact" label="Contact" variant="secondary" />
+      </div>
+      <p class="mt-4 text-sm text-zinc-500">
+        TODO: place the final resume file at public/resume.pdf.
+      </p>
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold text-zinc-950">Skills Snapshot</h2>
+      <div class="mt-5 grid gap-5">
+        {
+          skillGroups.map((group) => (
+            <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
+              <h3 class="font-semibold text-zinc-950">{group.title}</h3>
+              <p class="mt-3 text-sm leading-6 text-zinc-600">{group.skills.join(", ")}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dashed border-blue-200 bg-blue-50/70 p-6">
+      <h2 class="text-2xl font-semibold text-zinc-950">TODO</h2>
+      <ul class="mt-4 space-y-2 text-base leading-7 text-zinc-600">
+        <li>Add exact work history, dates, and role titles.</li>
+        <li>Add education, certifications, or publications if applicable.</li>
+        <li>Add public profile links after confirming the URLs.</li>
+      </ul>
+    </section>
+  </section>
+</Layout>

@@ -1,43 +1,78 @@
-# Astro Starter Kit: Minimal
+# Saul Dugan Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A static personal portfolio site for Saul Dugan, built with Astro, TypeScript, and Tailwind CSS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro
+- TypeScript
+- Tailwind CSS
+- Static output only, no backend
+- Deployable to Cloudflare Pages
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
 ```text
 /
 ├── public/
+│   └── resume.pdf             # TODO: add final resume PDF
 ├── src/
+│   ├── components/
+│   ├── data/
+│   │   ├── projects.ts        # Central project data
+│   │   └── skills.ts          # Central skills data
+│   ├── layouts/
 │   └── pages/
-│       └── index.astro
+│       ├── index.astro
+│       ├── resume.astro
+│       └── projects/
+│           ├── index.astro
+│           └── [slug].astro
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Local Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Install dependencies:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+npm install
+```
 
-## 🧞 Commands
+Start the local dev server:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Build the static site:
 
-## 👀 Want to learn more?
+```sh
+npm run build
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Preview the production build locally:
+
+```sh
+npm run preview
+```
+
+## Cloudflare Pages
+
+Use these settings when creating the Cloudflare Pages project:
+
+- Framework preset: Astro
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node version: `22.12.0` or newer
+
+The site is static and does not require a backend or server runtime.
+
+## Editing Notes
+
+- Add or edit projects in `src/data/projects.ts`.
+- Add or edit skill groups in `src/data/skills.ts`.
+- Add screenshots or diagrams under `public/` and reference them from project pages when ready.
+- Replace all `TODO` contact/profile placeholders before publishing.
+- Put the final resume PDF at `public/resume.pdf`.
