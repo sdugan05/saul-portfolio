@@ -24,15 +24,16 @@ A plain static personal portfolio site for Saul Dugan, built with HTML, CSS, and
 ├── projects/
 │   ├── index.html
 │   ├── aem-strategy-research-os/
-│   ├── futures-backtesting-framework/
-│   ├── pine-to-ninjatrader/
-│   ├── remote-trading-monitor/
 │   ├── c-tensor-library/
-│   └── macro-event-risk-filter/
+│   ├── cloud-trading-webhook-server/
+│   ├── macro-event-risk-filter/
+│   ├── opsin-photoreception-lab/
+│   └── pine-to-ninjatrader/
+├── images/
+│   └── project screenshots
 └── public/
     ├── favicon.ico
-    ├── favicon.svg
-    └── resume.pdf             # TODO: add final resume PDF
+    └── favicon.svg
 ```
 
 ## Local Development
@@ -67,6 +68,5 @@ This branch intentionally does not include Astro, Tailwind, package dependencies
 - Edit page content directly in the `.html` files.
 - Edit visual styles in `styles.css`.
 - Edit the mobile menu behavior in `script.js`.
-- Add screenshots or diagrams under `public/` and reference them from the project pages.
-- Replace all `TODO` contact/profile placeholders before publishing.
-- Put the final resume PDF at `public/resume.pdf`, then turn the visible resume TODO placeholders into links.
+- Store project screenshots in `images/` and reference them from the project pages.
+- Bump the `styles.css` query-string version in the HTML files after major style changes so browsers fetch fresh CSS.
