@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Cloud Trading Webhook Server case study for Saul Dugan." /><title>Cloud Trading Webhook Server | Saul Dugan</title><link rel="icon" type="image/svg+xml" href="/public/favicon.svg" /><link rel="stylesheet" href="/styles.css?v=moss-final" /></head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="/">Saul Dugan</a><button class="menu-button" type="button" aria-expanded="false" data-menu-button>Menu</button><div class="nav-links" data-nav-links><a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a><a href="/resume/">Resume</a><a href="/#contact">Contact</a></div></nav></header>
+    <main id="main" class="case-study">
+      <section class="container narrow page-header"><a class="text-link" href="/projects/">Back to projects</a><div class="page-title"><p class="eyebrow">Case study</p><h1>Cloud Trading Webhook Server</h1><p>A cloud-deployed webhook service for receiving trading signals, parsing gateway messages, and coordinating order-flow infrastructure.</p></div><ul class="tags"><li>Cloud deployment</li><li>Webhooks</li><li>Trading infrastructure</li></ul><figure class="project-shot"><img src="/images/cloud-deployed-trading-infra-screenshot.png" alt="Terminal log showing parsed SignalR gateway trade payloads for a cloud trading webhook server." /></figure></section>
+      <div class="container narrow">
+        <section class="case-section"><h2>Overview</h2><p>A trading infrastructure project that routes external strategy signals through a cloud service and into broker/gateway order-flow handling.</p></section>
+        <section class="case-section"><h2>Problem</h2><p>Live trading integrations need more than a webhook endpoint. They need message parsing, clear observability, idempotent state handling, and enough deployment discipline to trust the system under pressure.</p></section>
+        <section class="case-section"><h2>What I Built</h2><ul class="case-list"><li>A cloud-hosted signal receiver for strategy webhook events.</li><li>Gateway message parsing for SignalR-style payloads and order update events.</li><li>Operational logging that exposes order IDs, status changes, contract identifiers, side, size, fees, and timestamps.</li></ul></section>
+        <section class="case-section"><h2>Technologies Used</h2><ul class="chip-list"><li>Cloud deployment</li><li>Webhooks</li><li>SignalR</li><li>Trading APIs</li><li>Operational logging</li></ul></section>
+        <section class="case-section"><h2>Key Technical Challenges</h2><ul class="case-list"><li>Parsing nested gateway messages reliably while preserving the fields needed for audit trails.</li><li>Separating signal intake from execution-state feedback so the service can reason about pending, filled, and updated orders.</li><li>Making runtime logs detailed enough for debugging without burying the important order lifecycle events.</li></ul></section>
+        <section class="case-section"><h2>Links</h2><p><a class="text-link" href="https://github.com/sdugan05/topstepx-multi-account-trading-system" target="_blank" rel="noreferrer">View on GitHub</a></p></section>
+        <section class="case-section"><h2>What It Demonstrates</h2><ul class="demo-list"><li>Trading API integration</li><li>Cloud operations</li><li>Webhook architecture</li><li>Production-minded observability</li></ul></section>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><p>&copy; 2026 Saul Dugan.</p><p>Plain HTML/CSS/JS portfolio. Built for Cloudflare Pages.</p></div></footer><script src="/script.js?v=moss-final"></script>
+  </body>
+</html>
